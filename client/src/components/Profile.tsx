@@ -14,7 +14,7 @@ const consultingBackground = [
   "Over 20+ years of strategy and execution experience, with responsibility for strategic consulting engagements with public and private sector clients, delivering high-impact solutions to critical problems.",
   "Designed and implemented multiple business transformation initiatives, creating, delivering and capturing new sources of value across multiple industries, overcoming challenges of legacy structures, processes and cultures.",
   "Conducted 40+ market reviews, target identification and due diligence projects for leading private equity and advisory firms, conducting critical analysis and delivering within high pressure timelines.",
-  "Delivered 40+ acquisitions both onshore and offshore, accountable for opportunity sourcing, deal structure and integration.",
+  "Delivered 50+ acquisitions both onshore and offshore, accountable for opportunity sourcing, deal structure and integration, generating $700m+ in value creation.",
   "Experience managing stakeholder expectations throughout the lifecycle of projects in organisations ranging from 5 to 20,000+ employees.",
 ];
 
@@ -37,6 +37,7 @@ const industryExperience = [
   "General Manager / MD, Montpelier Asia Pacific",
   "Operations Director, Medical Legal",
   "Regional Manager, Sony UK",
+  "$700m+ in value creation across 50+ acquisitions",
 ];
 
 function RevealEl({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -86,7 +87,7 @@ export default function Profile() {
         {/* Profile layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left column: photo + key attributes */}
-          <RevealEl className="lg:col-span-4">
+          <RevealEl className="lg:col-span-3">
             <div className="sticky top-28">
               {/* Photo */}
               <div className="relative mb-8">
@@ -162,7 +163,7 @@ export default function Profile() {
           </RevealEl>
 
           {/* Right column: detailed experience */}
-          <div className="lg:col-span-8 space-y-10">
+          <div className="lg:col-span-9 space-y-10">
             {/* Consulting background */}
             <RevealEl delay={100}>
               <div

@@ -174,7 +174,7 @@ export default function Clients() {
             }}
           >
             {[
-              { value: "11", label: "Industry Sectors" },
+              { value: "15+", label: "Industry Sectors" },
               { value: "50+", label: "Client Organisations" },
               { value: "Public & Private", label: "Sector Coverage" },
               { value: "5–20,000+", label: "Employee Scale" },

@@ -54,7 +54,7 @@ export default function Navbar() {
               style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: "0.12em" }}
             >
               <span style={{ color: "white" }}>STRATEGY</span>
-              <span style={{ color: "oklch(0.62 0.13 258)" }}>EDGE</span>
+              <span style={{ color: "oklch(0.62 0.13 258)", fontWeight: '100' }}>EDGE</span>
             </span>
             <span
               className="ml-3 text-xs font-ui text-white/50 hidden sm:block"

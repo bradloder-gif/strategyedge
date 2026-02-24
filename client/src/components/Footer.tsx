@@ -3,6 +3,8 @@
    Deep navy with gradient bar at top
    ============================================================ */
 
+import LeadGeneration from "./LeadGeneration";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -11,7 +13,9 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ backgroundColor: "oklch(0.18 0.065 264)" }}>
+    <>
+      <LeadGeneration />
+      <footer style={{ backgroundColor: "oklch(0.18 0.065 264)" }}>
       {/* Gradient accent bar */}
       <div
         style={{
@@ -185,5 +189,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

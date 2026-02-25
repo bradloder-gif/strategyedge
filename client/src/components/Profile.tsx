@@ -98,8 +98,8 @@ export default function Profile() {
                 <img
                   src={BRAD_PHOTO}
                   alt="Brad Loder — Managing Director, StrategyEdge"
-                  className="relative z-10 w-full object-cover"
-                  style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                  className="relative z-10 object-cover"
+                  style={{ aspectRatio: "3/4", objectPosition: "center top", width: "130px" }}
                 />
                 <div
                   className="absolute bottom-0 right-0 w-6 h-6 z-20"

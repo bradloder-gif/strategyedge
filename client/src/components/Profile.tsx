@@ -87,10 +87,10 @@ export default function Profile() {
         {/* Profile layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left column: photo + key attributes */}
-          <RevealEl className="lg:col-span-2">
+          <RevealEl className="lg:col-span-1">
             <div className="sticky top-28">
               {/* Photo */}
-              <div className="relative mb-8">
+              <div className="relative mb-8" style={{ maxWidth: "140px" }}>
                 <div
                   className="absolute -top-3 -left-3 w-full h-full"
                   style={{ backgroundColor: "oklch(0.245 0.072 264)", zIndex: 0 }}
@@ -102,7 +102,7 @@ export default function Profile() {
                   style={{ aspectRatio: "3/4", objectPosition: "center top" }}
                 />
                 <div
-                  className="absolute bottom-0 right-0 w-12 h-12 z-20"
+                  className="absolute bottom-0 right-0 w-6 h-6 z-20"
                   style={{ backgroundColor: "oklch(0.52 0.14 258)" }}
                 />
               </div>
@@ -163,7 +163,7 @@ export default function Profile() {
           </RevealEl>
 
           {/* Right column: detailed experience */}
-          <div className="lg:col-span-10 space-y-10">
+          <div className="lg:col-span-11 space-y-10">
             {/* Consulting background */}
             <RevealEl delay={100}>
               <div

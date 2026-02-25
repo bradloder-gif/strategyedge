@@ -3,7 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { insertLeadSubmission } from "./db";
+import { insertLeadSubmission, insertEnquiry } from "./db";
 import { notifyOwner } from "./_core/notification";
 
 export const appRouter = router({
@@ -46,6 +46,44 @@ export const appRouter = router({
           };
         } catch (error) {
           console.error("[Lead Submission] Error:", error);
+          throw error;
+        }
+      }),
+  }),
+
+  enquiries: router({
+    submitForm: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1, "Name is required"),
+          email: z.string().email("Invalid email"),
+          organisation: z.string().optional(),
+          message: z.string().min(1, "Message is required"),
+        })
+      )
+      .mutation(async ({ input }) => {
+        try {
+          await insertEnquiry({
+            name: input.name,
+            email: input.email,
+            organisation: input.organisation || null,
+            message: input.message,
+          });
+
+          const orgDisplay = input.organisation || "Unknown Organisation";
+          const messagePreview = input.message.substring(0, 100);
+
+          await notifyOwner({
+            title: "New Enquiry Received",
+            content: `${input.name} from ${orgDisplay} (${input.email}) sent an enquiry: "${messagePreview}..."`,
+          });
+
+          return {
+            success: true,
+            message: "Thank you for reaching out. We will be in touch shortly.",
+          };
+        } catch (error) {
+          console.error("[Enquiry Submission] Error:", error);
           throw error;
         }
       }),

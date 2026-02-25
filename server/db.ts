@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, InsertLeadSubmission, leadSubmissions } from "../drizzle/schema";
+import { InsertUser, users, InsertLeadSubmission, leadSubmissions, InsertEnquiry, enquiries } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -101,6 +101,22 @@ export async function insertLeadSubmission(submission: InsertLeadSubmission): Pr
     console.log("[Database] Lead submission inserted:", submission.email);
   } catch (error) {
     console.error("[Database] Failed to insert lead submission:", error);
+    throw error;
+  }
+}
+
+export async function insertEnquiry(enquiry: InsertEnquiry): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot insert enquiry: database not available");
+    return;
+  }
+
+  try {
+    await db.insert(enquiries).values(enquiry);
+    console.log("[Database] Enquiry inserted:", enquiry.email);
+  } catch (error) {
+    console.error("[Database] Failed to insert enquiry:", error);
     throw error;
   }
 }

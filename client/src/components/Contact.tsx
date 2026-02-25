@@ -123,7 +123,7 @@ export default function Contact() {
             {/* Contact details */}
             <div className="space-y-4">
               <a
-                href="mailto:brad@strategyedge.com.au"
+                href="mailto:brad.loder@strategyedge.com.au"
                 className="flex items-center gap-4 group"
                 style={{ textDecoration: "none" }}
               >
@@ -143,12 +143,37 @@ export default function Contact() {
                   }}
                   className="group-hover:text-white"
                 >
-                  brad@strategyedge.com.au
+                  brad.loder@strategyedge.com.au
                 </span>
               </a>
 
               <a
-                href="https://www.linkedin.com/company/strategyedge"
+                href="tel:+61404442395"
+                className="flex items-center gap-4 group"
+                style={{ textDecoration: "none" }}
+              >
+                <div
+                  className="w-10 h-10 flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "oklch(0.52 0.14 258)" }}
+                >
+                  <Phone size={16} color="white" />
+                </div>
+                <span
+                  style={{
+                    fontFamily: "'Barlow', sans-serif",
+                    fontSize: "0.9rem",
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.7)",
+                    transition: "color 0.2s",
+                  }}
+                  className="group-hover:text-white"
+                >
+                  +61 404 442 395
+                </span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/bradleyloder/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"

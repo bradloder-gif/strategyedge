@@ -132,7 +132,7 @@ export default function Footer() {
             </h5>
             <div className="space-y-3">
               <a
-                href="mailto:brad@strategyedge.com.au"
+                href="mailto:brad.loder@strategyedge.com.au"
                 style={{
                   display: "block",
                   fontFamily: "'Barlow', sans-serif",
@@ -145,7 +145,23 @@ export default function Footer() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
               >
-                brad@strategyedge.com.au
+                brad.loder@strategyedge.com.au
+              </a>
+              <a
+                href="tel:+61404442395"
+                style={{
+                  display: "block",
+                  fontFamily: "'Barlow', sans-serif",
+                  fontSize: "0.875rem",
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.5)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                +61 404 442 395
               </a>
               <p
                 style={{

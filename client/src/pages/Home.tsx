@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Profile from "@/components/Profile";
+import ProjectImpact from "@/components/ProjectImpact";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <Services />
         <Profile />
+        <ProjectImpact />
         <Clients />
         <Contact />
       </main>

@@ -39,6 +39,13 @@ const industryExperience = [
   "Regional Manager, Sony UK",
 ];
 
+const boardSeats = [
+  "Non-Executive Director - ASX-listed Industrial Services",
+  "Board Advisor - Private Equity Portfolio Company",
+  "Advisory Board Member - Growth-Stage Technology Firm",
+  "Non-Executive Director - Private Services Company",
+];
+
 function RevealEl({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -215,7 +222,7 @@ export default function Profile() {
             </RevealEl>
 
             {/* Positions grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <RevealEl delay={150}>
                 <div
                   className="p-6 h-full"
@@ -331,6 +338,56 @@ export default function Profile() {
                           }}
                         >
                           {pos}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </RevealEl>
+
+              <RevealEl delay={250}>
+                <div
+                  className="p-6 h-full"
+                  style={{
+                    border: "1px solid oklch(0.88 0.012 264)",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <Award size={16} style={{ color: "oklch(0.52 0.14 258)" }} />
+                    <h4
+                      style={{
+                        fontFamily: "'Barlow Condensed', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "0.78rem",
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "oklch(0.245 0.072 264)",
+                      }}
+                    >
+                      Board Seats
+                    </h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {boardSeats.map((seat) => (
+                      <li
+                        key={seat}
+                        className="flex gap-2"
+                      >
+                        <span
+                          className="flex-shrink-0 mt-2 w-1 h-1 rounded-full"
+                          style={{ backgroundColor: "oklch(0.52 0.14 258)" }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: "'Barlow', sans-serif",
+                            fontSize: "0.8125rem",
+                            fontWeight: 300,
+                            color: "oklch(0.42 0.03 264)",
+                            lineHeight: 1.65,
+                          }}
+                        >
+                          {seat}
                         </span>
                       </li>
                     ))}

@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Profile from "@/components/Profile";
+import Testimonials from "@/components/Testimonials";
 import ProjectImpact from "@/components/ProjectImpact";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <Services />
         <Profile />
+        <Testimonials />
         <ProjectImpact />
         <Clients />
         <Contact />

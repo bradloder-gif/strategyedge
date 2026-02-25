@@ -87,7 +87,7 @@ export default function Profile() {
         {/* Profile layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left column: photo + key attributes */}
-          <RevealEl className="lg:col-span-3">
+          <RevealEl className="lg:col-span-2">
             <div className="sticky top-28">
               {/* Photo */}
               <div className="relative mb-8">
@@ -163,7 +163,7 @@ export default function Profile() {
           </RevealEl>
 
           {/* Right column: detailed experience */}
-          <div className="lg:col-span-9 space-y-10">
+          <div className="lg:col-span-10 space-y-10">
             {/* Consulting background */}
             <RevealEl delay={100}>
               <div

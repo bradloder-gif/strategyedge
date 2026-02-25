@@ -4,10 +4,10 @@ import { Briefcase, Building2, Award } from "lucide-react";
 const BRAD_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378470694/ihYSkUcwtIbwtuHq.jpg";
 
 const consultingBackground = [
-  "Over 20+ years of strategy and execution experience, with responsibility for strategic consulting engagements with public and private sector clients, delivering high-impact solutions to critical problems.",
+  "Over 20+ years of strategy and execution experience, with responsibility for strategic consulting engagements with public and private sector clients, delivering high-impact solutions to critical problems, generating $700m+ in value creation.",
   "Designed and implemented multiple business transformation initiatives, creating, delivering and capturing new sources of value across multiple industries, overcoming challenges of legacy structures, processes and cultures.",
   "Conducted 40+ market reviews, target identification and due diligence projects for leading private equity and advisory firms, conducting critical analysis and delivering within high pressure timelines.",
-  "Delivered 50+ acquisitions both onshore and offshore, accountable for opportunity sourcing, deal structure and integration, generating $700m+ in value creation.",
+  "Delivered 50+ acquisitions both onshore and offshore, accountable for opportunity sourcing, deal structure and integration.",
   "Experience managing stakeholder expectations throughout the lifecycle of projects in organisations ranging from 5 to 20,000+ employees.",
 ];
 

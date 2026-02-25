@@ -37,7 +37,6 @@ const industryExperience = [
   "General Manager / MD, Montpelier Asia Pacific",
   "Operations Director, Medical Legal",
   "Regional Manager, Sony UK",
-  "$700m+ in value creation across 50+ acquisitions",
 ];
 
 function RevealEl({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {

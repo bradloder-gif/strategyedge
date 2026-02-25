@@ -6,29 +6,37 @@
 
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 export default function LeadGeneration() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !name) return;
-
-    setLoading(true);
-    // Simulate form submission (in production, this would send to your backend or email service)
-    setTimeout(() => {
+  const submitMutation = trpc.leads.submitForm.useMutation({
+    onSuccess: () => {
       setSubmitted(true);
-      setLoading(false);
-      // Reset form after 3 seconds
       setTimeout(() => {
         setEmail("");
         setName("");
         setSubmitted(false);
       }, 3000);
-    }, 800);
+    },
+    onError: (err) => {
+      setError(err.message || "Failed to submit. Please try again.");
+    },
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !name) return;
+
+    setError("");
+    await submitMutation.mutateAsync({
+      name,
+      email,
+    });
   };
 
   return (
@@ -186,9 +194,30 @@ export default function LeadGeneration() {
                   </div>
 
                   {/* Submit Button */}
+                  {error && (
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "rgba(220, 38, 38, 0.1)",
+                        border: "1px solid rgba(220, 38, 38, 0.3)",
+                        borderRadius: "0.5rem",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontFamily: "'Barlow', sans-serif",
+                          fontSize: "0.875rem",
+                          color: "rgb(254, 202, 202)",
+                        }}
+                      >
+                        {error}
+                      </p>
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    disabled={loading || !email || !name}
+                    disabled={submitMutation.isPending || !email || !name}
                     style={{
                       width: "100%",
                       padding: "0.875rem 1.5rem",
@@ -198,32 +227,32 @@ export default function LeadGeneration() {
                       fontWeight: 700,
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      backgroundColor: loading ? "oklch(0.52 0.14 258 / 0.7)" : "oklch(0.52 0.14 258)",
+                      backgroundColor: submitMutation.isPending ? "oklch(0.52 0.14 258 / 0.7)" : "oklch(0.52 0.14 258)",
                       color: "white",
                       border: "none",
                       borderRadius: "0.5rem",
-                      cursor: loading ? "not-allowed" : "pointer",
+                      cursor: submitMutation.isPending ? "not-allowed" : "pointer",
                       transition: "all 0.3s",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       gap: "0.5rem",
-                      opacity: loading ? 0.7 : 1,
+                      opacity: submitMutation.isPending ? 0.7 : 1,
                     }}
                     onMouseEnter={(e) => {
-                      if (!loading) {
+                      if (!submitMutation.isPending) {
                         e.currentTarget.style.backgroundColor = "oklch(0.62 0.13 258)";
                         e.currentTarget.style.transform = "translateY(-2px)";
                       }
                     }}
                     onMouseLeave={(e) => {
-                      if (!loading) {
+                      if (!submitMutation.isPending) {
                         e.currentTarget.style.backgroundColor = "oklch(0.52 0.14 258)";
                         e.currentTarget.style.transform = "translateY(0)";
                       }
                     }}
                   >
-                    {loading ? (
+                    {submitMutation.isPending ? (
                       <>
                         <span
                           style={{

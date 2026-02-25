@@ -127,6 +127,8 @@ export default function Hero() {
               { value: "50+", label: "Acquisitions Delivered" },
               { value: "40+", label: "Market Reviews" },
               { value: "15+", label: "Industry Sectors" },
+              { value: "100+", label: "Projects Delivered" },
+              { value: "$700m+", label: "Value Creation" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

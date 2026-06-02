@@ -38,11 +38,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-        working-directory: ./client
 
-      - name: Build Website
-        run: pnpm run build
-        working-directory: ./client
+      - name: Build Frontend Website
+        run: pnpm --filter client run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,8 +48,4 @@ jobs:
       - name: Upload production artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          path: './client/dist'

@@ -71,9 +71,9 @@ export default function Hero() {
               lineHeight: 1.1,
             }}
           >
-            High-Impact Strategy,
+            High-Impact Strategy
             <br />
-            <em style={{ color: "oklch(0.72 0.13 258)", fontStyle: "italic" }}>Delivered Flexibly</em>
+            <em style={{ color: "oklch(0.72 0.13 258)", fontStyle: "italic" }}>Delivering Real Value.</em>
           </motion.h1>
 
           {/* Subheadline */}

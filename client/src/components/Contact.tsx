@@ -5,7 +5,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
-import { trpc } from "@/lib/trpc";
+const CONTACT_EMAIL = "brad.loder@strategyedge.com.au";
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const CTA_BG = "https://private-us-east-1.manuscdn.com/sessionFile/gVybYq4Vjpdbw9fgkcKQlM/sandbox/JYS0Dl54xMrj7DyIEQOcMa-img-4_1771894483000_na1fn_Y3RhLWJn.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ1Z5YllxNFZqcGRidzlmZ2tjS1FsTS9zYW5kYm94L0pZUzBEbDU0eE1yajdEeUlFUU9jTWEtaW1nLTRfMTc3MTg5NDQ4MzAwMF9uYTFmbl9ZM1JoTFdKbi5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ZHSBfs-xJ8mpcShKEMKCEweJjABX2g2a7WhU9357kJFnEL6g8L0AxAbDbxKPD98oZqjISTHDSoDFIZs2WISApJp6UHnQarIBoXiW4mjod0dUDe~kqMNl~8oOKvQDKiD2hdbnYdv5Ae48pI4IB7lAD7PcBAPfw6D14uxnfsoJ8uQIXQAqs0EyrN3EQcDzqP7wrHrNJfgBuZ6UhM-8ZTC-GS-11klmecbVmUOm2nSWFCnMoznAqHmEBVVGocNwxLGsr1WbkoabCufvwuA1QF4asC26KRHyNK86MOsW276HiDSXmeE0jcH2cKvs31VWQ~VeMU1VZJ6rhN0sS0W-85UcgA__";
 
@@ -28,22 +29,45 @@ function RevealEl({ children, delay = 0, className = "" }: { children: React.Rea
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", organisation: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-  const submitMutation = trpc.enquiries.submitForm.useMutation();
+  const [sending, setSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [honey, setHoney] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSending(true);
+    setErrorMsg("");
     try {
-      await submitMutation.mutateAsync({
-        name: formData.name,
-        email: formData.email,
-        organisation: formData.organisation,
-        message: formData.message,
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          organisation: formData.organisation || "Not provided",
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Website enquiry from ${formData.name}`,
+          _template: "table",
+          _captcha: "false",
+          _honey: honey,
+        }),
       });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data || String(data.success) !== "true") {
+        throw new Error(data?.message || `Form service responded ${res.status}`);
+      }
       setSubmitted(true);
       setFormData({ name: "", email: "", organisation: "", message: "" });
-      setTimeout(() => setSubmitted(false), 5000);
+      setHoney("");
+      setTimeout(() => setSubmitted(false), 8000);
     } catch (error) {
       console.error("Error submitting enquiry:", error);
+      setErrorMsg(
+        `Sorry — your message couldn't be sent. Please email ${CONTACT_EMAIL} directly.`
+      );
+    } finally {
+      setSending(false);
     }
   };
 
@@ -349,13 +373,39 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Honeypot — hidden from people, filled by spam bots */}
+                <input
+                  type="text"
+                  name="_honey"
+                  value={honey}
+                  onChange={(e) => setHoney(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+                />
+
+                {errorMsg && (
+                  <p
+                    role="alert"
+                    style={{
+                      fontFamily: "'Barlow', sans-serif",
+                      fontSize: "0.85rem",
+                      color: "oklch(0.78 0.14 30)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {errorMsg}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  disabled={submitMutation.isPending}
+                  disabled={sending}
                   className="btn-primary w-full justify-center"
-                  style={{ marginTop: "0.5rem", opacity: submitMutation.isPending ? 0.6 : 1 }}
+                  style={{ marginTop: "0.5rem", opacity: sending ? 0.6 : 1 }}
                 >
-                  <span>{submitMutation.isPending ? "Sending..." : "Send Enquiry"}</span>
+                  <span>{sending ? "Sending..." : "Send Enquiry"}</span>
                   <ArrowRight size={16} />
                 </button>
               </form>

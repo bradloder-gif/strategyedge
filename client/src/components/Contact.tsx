@@ -8,7 +8,7 @@ import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
 const CONTACT_EMAIL = "brad.loder@strategyedge.com.au";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
-const CTA_BG = "https://private-us-east-1.manuscdn.com/sessionFile/gVybYq4Vjpdbw9fgkcKQlM/sandbox/JYS0Dl54xMrj7DyIEQOcMa-img-4_1771894483000_na1fn_Y3RhLWJn.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ1Z5YllxNFZqcGRidzlmZ2tjS1FsTS9zYW5kYm94L0pZUzBEbDU0eE1yajdEeUlFUU9jTWEtaW1nLTRfMTc3MTg5NDQ4MzAwMF9uYTFmbl9ZM1JoTFdKbi5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ZHSBfs-xJ8mpcShKEMKCEweJjABX2g2a7WhU9357kJFnEL6g8L0AxAbDbxKPD98oZqjISTHDSoDFIZs2WISApJp6UHnQarIBoXiW4mjod0dUDe~kqMNl~8oOKvQDKiD2hdbnYdv5Ae48pI4IB7lAD7PcBAPfw6D14uxnfsoJ8uQIXQAqs0EyrN3EQcDzqP7wrHrNJfgBuZ6UhM-8ZTC-GS-11klmecbVmUOm2nSWFCnMoznAqHmEBVVGocNwxLGsr1WbkoabCufvwuA1QF4asC26KRHyNK86MOsW276HiDSXmeE0jcH2cKvs31VWQ~VeMU1VZJ6rhN0sS0W-85UcgA__";
+const CTA_BG = "/images/contact-bg.jpg";
 
 function RevealEl({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);

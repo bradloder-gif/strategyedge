@@ -6,7 +6,7 @@
 import { useEffect, useRef } from "react";
 import { BarChart2, Search, GitMerge, Zap, Globe, Shield } from "lucide-react";
 
-const TEXTURE_BG = "https://private-us-east-1.manuscdn.com/sessionFile/gVybYq4Vjpdbw9fgkcKQlM/sandbox/JYS0Dl54xMrj7DyIEQOcMa-img-3_1771894477000_na1fn_YWJvdXQtdGV4dHVyZQ.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ1Z5YllxNFZqcGRidzlmZ2tjS1FsTS9zYW5kYm94L0pZUzBEbDU0eE1yajdEeUlFUU9jTWEtaW1nLTNfMTc3MTg5NDQ3NzAwMF9uYTFmbl9ZV0p2ZFhRdGRHVjRkSFZ5WlEuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=akKn5oHeQFSfLUWVunjPDfOqRWhsrbptn2oNfpYDYWztp3Kl8CiShUaUabc3dZYllr-qNiAAYFAJrapqNY1UTB25p4x0pY0FXTEigSRg6H7pvcxcWFl7Mr~QWr1putyFxeIeZGEoKkNGyn62cPXD89iw64iFAE-aGwwug2L--ku7XuTx~ygttGHK8ZTjbzBLLUBbkG40Fih-Xhes7s0Lp~lfKsTABA5n1xRSOJ0Mfueg4CdEs3YYORqGWxI58kuystN77MOYpQtDkmcnHpagg2YABEidF7PY-B~h2AHMRpWZ9O9iCUtkAykj07RBNdxnnCq~Iw6dOs0Nr2UtOq6Qyw__"; // dark navy texture
+const TEXTURE_BG = "/images/services-texture.jpg"; // dark navy texture
 
 const services = [
   {

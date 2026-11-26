@@ -7,7 +7,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const HERO_BG = "https://private-us-east-1.manuscdn.com/sessionFile/gVybYq4Vjpdbw9fgkcKQlM/sandbox/JYS0Dl54xMrj7DyIEQOcMa-img-1_1771894483000_na1fn_aGVyby1iZw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ1Z5YllxNFZqcGRidzlmZ2tjS1FsTS9zYW5kYm94L0pZUzBEbDU0eE1yajdEeUlFUU9jTWEtaW1nLTFfMTc3MTg5NDQ4MzAwMF9uYTFmbl9hR1Z5YnkxaVp3LmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=DkRAP9-KxKFkQ8Jpxx6iKF-nTDdDjcMDK2TGG3tPEalE82lSYH3F76Pgg-UPd5aZDqMBJDoVqS0v3m2y2KOHW~edHbPPJhi4TQeP9nUlzf45hFbu2rneQLGY5fZhK5zmEAkOaqvRpbO88AYqAkBKvIwsvRlEdvQTbpbYH5piahq0JSYEbzByr4FlCOSZL6vEATyOdyiwn5uktSNAKSV4f4noIZptX1On1DBTlehWw2PDcLVqSXmjbWsqes0vSXIhT1VCoj5R8BXz7l4~Eui5m~gnIM83SyjmDXj6AV5TlyRMWmeg2hRj~bvgSDg3nDY~wnM0axMC-ihi8DCT62037w__";
+const HERO_BG = "/images/hero-bg.jpg";
 
 export default function Hero() {
   const scrollToAbout = () => {

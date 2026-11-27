@@ -197,7 +197,23 @@ export default function Footer() {
               color: "rgba(255,255,255,0.25)",
             }}
           >
-            ABN 21 109 526 607 · Sydney, Australia
+            <a
+              href="https://abr.business.gov.au/ABN/View?abn=21109526607"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View ABN 21 109 526 607 on the Australian Business Register (opens in a new tab)"
+              style={{
+                color: "rgba(255,255,255,0.6)",
+                textDecoration: "underline",
+                textUnderlineOffset: "2px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+            >
+              ABN 21 109 526 607
+            </a>
+            {" · Sydney, Australia"}
           </p>
         </div>
       </div>

@@ -62,7 +62,6 @@ export default function Contact() {
       trackEvent("Enquiry submitted");
       setFormData({ name: "", email: "", organisation: "", message: "" });
       setHoney("");
-      setTimeout(() => setSubmitted(false), 8000);
     } catch (error) {
       console.error("Error submitting enquiry:", error);
       setErrorMsg(

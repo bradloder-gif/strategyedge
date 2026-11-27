@@ -184,7 +184,7 @@ export default function Footer() {
               fontFamily: "'Barlow', sans-serif",
               fontSize: "0.75rem",
               fontWeight: 300,
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,0.5)",
             }}
           >
             © {year} StrategyEdge Consulting & Advisory. All rights reserved.
@@ -194,7 +194,7 @@ export default function Footer() {
               fontFamily: "'Barlow', sans-serif",
               fontSize: "0.75rem",
               fontWeight: 300,
-              color: "rgba(255,255,255,0.25)",
+              color: "rgba(255,255,255,0.5)",
             }}
           >
             <a

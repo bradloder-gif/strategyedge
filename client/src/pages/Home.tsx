@@ -12,6 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import ProjectImpact from "@/components/ProjectImpact";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
+import PrivacyStatement from "@/components/PrivacyStatement";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <ProjectImpact />
         <Clients />
         <Contact />
+        <PrivacyStatement />
       </main>
       <Footer />
     </div>

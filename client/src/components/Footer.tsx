@@ -86,6 +86,7 @@ export default function Footer() {
                 { label: "Profile", href: "#profile" },
                 { label: "Clients", href: "#clients" },
                 { label: "Contact", href: "#contact" },
+                { label: "Privacy", href: "#privacy" },
               ].map((link) => (
                 <li key={link.href}>
                   <button

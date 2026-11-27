@@ -410,6 +410,26 @@ export default function Contact() {
                   <span>{sending ? "Sending..." : "Send Enquiry"}</span>
                   <ArrowRight size={16} />
                 </button>
+
+                <p
+                  style={{
+                    fontFamily: "'Barlow', sans-serif",
+                    fontSize: "0.72rem",
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.45)",
+                    lineHeight: 1.6,
+                    marginTop: "0.75rem",
+                  }}
+                >
+                  By sending this enquiry you agree to our{" "}
+                  <a
+                    href="#privacy"
+                    style={{ color: "oklch(0.72 0.13 258)", textDecoration: "underline" }}
+                  >
+                    privacy statement
+                  </a>
+                  , which explains how your details are handled.
+                </p>
               </form>
             )}
           </RevealEl>

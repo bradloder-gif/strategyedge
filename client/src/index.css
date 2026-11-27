@@ -256,14 +256,18 @@
     box-shadow: 0 20px 40px rgba(26, 43, 94, 0.15);
   }
 
-  /* Scroll animation base states */
+  /* Scroll animation base states
+     Gated on html.js so the prerendered copy stays visible without JavaScript. */
   .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .fade-up.visible {
+  html.js .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  html.js .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
   }

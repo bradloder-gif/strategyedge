@@ -6,7 +6,7 @@
    While it is empty, no script is loaded and no requests are made.
    ============================================================ */
 
-const UMAMI_WEBSITE_ID = "";
+const UMAMI_WEBSITE_ID = "eabfdb1a-a88f-4623-9c48-b26269b31ce2";
 
 const UMAMI_SRC = "https://cloud.umami.is/script.js";
 const UMAMI_DOMAINS = "strategyedge.com.au,www.strategyedge.com.au";

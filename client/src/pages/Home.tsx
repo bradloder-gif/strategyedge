@@ -18,8 +18,20 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.975 0.006 85)" }}>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-5 focus:py-3 focus:text-sm focus:font-semibold"
+        style={{
+          fontFamily: "'Barlow', sans-serif",
+          backgroundColor: "white",
+          color: "oklch(0.245 0.072 264)",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+        }}
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <About />
         <Services />

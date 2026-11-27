@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { Briefcase, Building2, Award } from "lucide-react";
 
-const BRAD_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378470694/ihYSkUcwtIbwtuHq.jpg";
+const BRAD_PHOTO = "/images/brad.jpg";
 
 const consultingBackground = [
   "Over 20+ years of strategy and execution experience, with responsibility for strategic consulting engagements with public and private sector clients, delivering high-impact solutions to critical problems, generating $700m+ in value creation.",

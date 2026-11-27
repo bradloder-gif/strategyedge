@@ -7,7 +7,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const HERO_BG = "/images/hero-bg.jpg";
+const HERO_BG = "/images/contact-bg.jpg";
 
 export default function Hero() {
   const scrollToAbout = () => {

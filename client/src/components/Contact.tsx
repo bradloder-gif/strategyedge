@@ -257,6 +257,29 @@ export default function Contact() {
 
           {/* Right: Contact form */}
           <RevealEl delay={150}>
+            {/* Persistent live region. It is mounted on first render and only its
+                text changes on success, because a live region created at the same
+                moment as its message is frequently not announced by screen readers. */}
+            <p
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              style={{
+                position: "absolute",
+                width: "1px",
+                height: "1px",
+                padding: 0,
+                margin: "-1px",
+                overflow: "hidden",
+                clip: "rect(0 0 0 0)",
+                whiteSpace: "nowrap",
+                border: 0,
+              }}
+            >
+              {submitted
+                ? "Thank you — your enquiry has been sent. We'll be in touch shortly."
+                : ""}
+            </p>
             {submitted ? (
               <div
                 className="flex flex-col items-center justify-center h-full text-center p-12"

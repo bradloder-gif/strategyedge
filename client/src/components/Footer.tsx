@@ -197,7 +197,7 @@ export default function Footer() {
               color: "rgba(255,255,255,0.25)",
             }}
           >
-            ABN · Sydney, Australia
+            ABN 21 109 526 607 · Sydney, Australia
           </p>
         </div>
       </div>

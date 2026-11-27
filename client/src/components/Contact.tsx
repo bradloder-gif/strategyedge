@@ -5,6 +5,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail, Phone, Linkedin } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 const CONTACT_EMAIL = "brad.loder@strategyedge.com.au";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
@@ -58,6 +59,7 @@ export default function Contact() {
         throw new Error(data?.message || `Form service responded ${res.status}`);
       }
       setSubmitted(true);
+      trackEvent("Enquiry submitted");
       setFormData({ name: "", email: "", organisation: "", message: "" });
       setHoney("");
       setTimeout(() => setSubmitted(false), 8000);

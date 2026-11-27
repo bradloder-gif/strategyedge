@@ -42,7 +42,7 @@ export default function Footer() {
                 fontFamily: "'Barlow', sans-serif",
                 fontSize: "0.8rem",
                 fontWeight: 300,
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(255,255,255,0.5)",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 marginBottom: "1rem",
@@ -55,7 +55,7 @@ export default function Footer() {
                 fontFamily: "'Barlow', sans-serif",
                 fontSize: "0.8125rem",
                 fontWeight: 300,
-                color: "rgba(255,255,255,0.45)",
+                color: "rgba(255,255,255,0.5)",
                 lineHeight: 1.7,
                 maxWidth: "18rem",
               }}
@@ -73,7 +73,7 @@ export default function Footer() {
                 fontSize: "0.72rem",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.35)",
+                color: "rgba(255,255,255,0.5)",
                 marginBottom: "1rem",
               }}
             >
@@ -121,7 +121,7 @@ export default function Footer() {
                 fontSize: "0.72rem",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.35)",
+                color: "rgba(255,255,255,0.5)",
                 marginBottom: "1rem",
               }}
             >
@@ -165,7 +165,7 @@ export default function Footer() {
                   fontFamily: "'Barlow', sans-serif",
                   fontSize: "0.875rem",
                   fontWeight: 300,
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(255,255,255,0.5)",
                 }}
               >
                 Sydney, Australia
